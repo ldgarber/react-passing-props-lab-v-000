@@ -21,8 +21,8 @@ const fruitTypesMap = {
 };
 
 let frujis = _.pickBy(emoji.lib, x => {
-  return x.keywords.includes('fruit') &&
-         !x.keywords.includes('vegetable');
+  return _.includes(x.keywords, 'fruit') &&
+         !(_.includes(x.keywords, 'vegetable'));
 });
 
 frujis = _.mapValues(frujis, (fruji, name) => {
